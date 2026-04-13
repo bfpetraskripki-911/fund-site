@@ -14,21 +14,29 @@
     }
 
     header {
-      <img src="images/logo.jpg" style="max-width: 250px;">
       background: #1d3557;
       color: white;
       padding: 40px 20px;
       text-align: center;
     }
 
+    .logo {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 25px;
+      border-radius: 12px;
+    }
+
     header h1 {
-      margin: 0 0 10px;
+      margin: 0 0 15px;
       font-size: 34px;
     }
 
     header p {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0 auto 20px;
       font-size: 18px;
     }
 
@@ -43,6 +51,7 @@
       text-decoration: none;
       margin: 0 12px;
       font-weight: bold;
+      display: inline-block;
     }
 
     section {
@@ -111,12 +120,16 @@
 <body>
 
   <header>
+    <img src="logo.jpg" alt="Логотип фонду" class="logo">
+
     <h1>Благодійний фонд Петра Скрипки</h1>
+
     <p>
       Я — Петро Скрипка, ветеран, колишній військовий та засновник благодійного фонду.
       Моя команда допомагає військовим, людям з прифронтових територій, дітям, пенсіонерам
       та людям, які опинилися у важких життєвих обставинах.
     </p>
+
     <a class="button" href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank">Допомогти зараз</a>
   </header>
 
@@ -178,7 +191,6 @@
   <section id="videos">
     <h2>Відео</h2>
     <p>Відео краще додавати посиланнями з YouTube або інших платформ.</p>
-    <p>Приклад:</p>
     <p><a href="https://youtu.be/c1ZIGIKSSzg?si=Ct5e-mtE_7nLr3AR" target="_blank">Подивитися відео</a></p>
   </section>
 
@@ -200,3 +212,4 @@
 
 </body>
 </html>
+ 

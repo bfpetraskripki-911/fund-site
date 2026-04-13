@@ -13,25 +13,28 @@
       line-height: 1.6;
     }
 
-  header {
-  margin: 0;
-  padding: 0;
-}
+    .top-banner {
+      width: 100%;
+      height: 260px;
+      background-image: url("logo.jpg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
 
-    
-    header h1 {
+    .hero {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 25px 20px 35px;
+    }
+
+    .hero h1 {
       margin: 0 0 15px;
       font-size: 34px;
-    }.banner {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  margin: 0 auto 25px;
-  border-radius: 12px;
-}
+    }
 
-    header p {
+    .hero p {
       max-width: 900px;
       margin: 0 auto 20px;
       font-size: 18px;
@@ -116,19 +119,17 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo.jpg" alt="Логотип фонду" class="logo">
+  <div class="top-banner"></div>
 
+  <div class="hero">
     <h1>Благодійний фонд Петра Скрипки</h1>
-
     <p>
       Я — Петро Скрипка, ветеран, колишній військовий та засновник благодійного фонду.
       Моя команда допомагає військовим, людям з прифронтових територій, дітям, пенсіонерам
       та людям, які опинилися у важких життєвих обставинах.
     </p>
-
     <a class="button" href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank">Допомогти зараз</a>
-  </header>
+  </div>
 
   <nav>
     <a href="#about">Про фонд</a>
@@ -209,4 +210,3 @@
 
 </body>
 </html>
- 

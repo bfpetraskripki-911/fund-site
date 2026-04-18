@@ -19,7 +19,6 @@
   object-position: bottom;
   display: block;
 }
-    }
 
     .intro {
       max-width: 100%;
@@ -122,111 +121,113 @@
       color: white;
       margin-top: 30px;
     }
-
-    /* ПЛАВАЮЧА КНОПКА ДОНАТУ */
-    .donate-btn {
+    /* НОВА ПЛАВАЮЧА КНОПКА ДОНАТУ */
+    .floating-donate-btn {
       position: fixed;
       right: 20px;
       bottom: 20px;
+      z-index: 99999;
       display: flex;
       align-items: center;
+      gap: 12px;
+      padding: 12px 18px 12px 12px;
       text-decoration: none;
-      z-index: 99999;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, #0057B7 50%, #FFD700 50%);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      border: 2px solid rgba(255,255,255,0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      max-width: calc(100vw - 30px);
     }
 
-    .donate-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
+    .floating-donate-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+    }
+
+    .floating-donate-btn:active {
+      transform: scale(0.98);
+    }
+
+    .floating-donate-icon {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
-      border: 3px solid #ffffff;
-      position: relative;
-      z-index: 2;
-      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.22);
     }
 
-    .donate-icon svg {
-      width: 28px;
-      height: 28px;
+    .floating-donate-icon svg {
+      width: 48px;
+      height: 48px;
       display: block;
     }
 
-    .donate-text {
-      background: #d62828;
-      color: #fff;
-      padding: 14px 22px 14px 36px;
-      margin-left: -18px;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 700;
+    .floating-donate-text {
+      font-size: 18px;
+      font-weight: 800;
       line-height: 1;
+      color: #111;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.35);
       white-space: nowrap;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+      font-family: Arial, sans-serif;
     }
 
-    .donate-btn:hover .donate-text {
-      transform: translateX(-4px);
+    @media (max-width: 768px) {
+      .floating-donate-btn {
+        right: 14px;
+        bottom: 14px;
+        padding: 10px 15px 10px 10px;
+        gap: 10px;
+      }
+
+      .floating-donate-icon {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+      }
+
+      .floating-donate-icon svg {
+        width: 42px;
+        height: 42px;
+      }
+
+      .floating-donate-text {
+        font-size: 16px;
+      }
     }
 
-    .donate-text,
-    .donate-btn {
-      transition: all 0.25s ease;
+    @media (max-width: 520px) {
+      .floating-donate-btn {
+        padding: 10px;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        justify-content: center;
+      }
+
+      .floating-donate-text {
+        display: none;
+      }
+
+      .floating-donate-icon {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .floating-donate-icon svg {
+        width: 48px;
+        height: 48px;
+      }
     }
-
-    @media (max-width: 600px) {
-      .donate-btn {
-        right: 12px;
-        bottom: 12px;
-      }
-
-      .donate-icon {
-        width: 56px;
-        height: 56px;
-      }
-
-      .donate-text {
-        font-size: 14px;
-        padding: 12px 18px 12px 30px;
-      }
-    .donate-btn {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  z-index: 9999;
-}
-
-.donate-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-}
-
-.donate-icon svg {
-  width: 30px;
-  height: 30px;
-}
-
-.donate-text {
-  background: #d62828;
-  color: white;
-  padding: 14px 22px 14px 36px;
-  margin-left: -18px;
-  border-radius: 999px;
-  font-weight: bold;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
+   
   </style>
 </head>
 <body>
@@ -428,23 +429,49 @@
   <footer>
     Благодійний фонд Петра Скрипки © 2026
   </footer>
+  <a href="https://send.monobank.ua/jar/6qpTzTDwDe"
+     class="floating-donate-btn"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Зробити донат">
 
-  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" class="donate-btn" target="_blank" aria-label="Зробити донат">
-    <div class="donate-icon">
+    <span class="floating-donate-icon">
       <svg viewBox="0 0 64 64" aria-hidden="true">
-        <path fill="#ffd700" d="M32 7c3 4 7 7 12 9v6c-2 1-4 2-5 4v9c0 4 2 7 6 9v5c-5-1-9-4-13-7-4 3-8 6-13 7v-5c4-2 6-5 6-9v-9c-1-2-3-3-5-4v-6c5-2 9-5 12-9zm-3 14v13c0 3-1 5-4 7 3-1 5-3 7-5 2 2 4 4 7 5-3-2-4-4-4-7V21c-1 1-2 2-3 3-1-1-2-2-3-3z"/>
+        <circle cx="32" cy="32" r="30" fill="#0057B7"/>
+        <path fill="#FFD700" d="M32 8
+          L36 12
+          L43 15
+          L43 29
+          C43 38,44 45,48 52
+          C43 50,38 48,34 44
+          L34 56
+          L30 56
+          L30 44
+          C26 48,21 50,16 52
+          C20 45,21 38,21 29
+          L21 15
+          L28 12
+          Z
+
+          M28 20
+          C29.5 19.2,30.8 18.2,32 17
+          C33.2 18.2,34.5 19.2,36 20
+          L36 28
+          C34.8 29.3,33.5 30.5,32 32
+          C30.5 30.5,29.2 29.3,28 28
+          Z
+
+          M30 33
+          L32 35
+          L34 33
+          L34 39
+          C33.4 40.1,32.7 41.1,32 42
+          C31.3 41.1,30.6 40.1,30 39
+          Z"/>
       </svg>
-    </div>
-    <div class="donate-text">Зробити донат</div>
+    </span>
+
+    <span class="floating-donate-text">Зробити донат</span>
   </a>
-  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" class="donate-btn" target="_blank">
-  <div class="donate-icon">
-    <svg viewBox="0 0 64 64">
-      <path fill="#ffffff" stroke="#000000" stroke-width="1.2"
-        d="M32 7c3 4 7 7 12 9v6c-2 1-4 2-5 4v9c0 4 2 7 6 9v5c-5-1-9-4-13-7-4 3-8 6-13 7v-5c4-2 6-5 6-9v-9c-1-2-3-3-5-4v-6c5-2 9-5 12-9zm-3 14v13c0 3-1 5-4 7 3-1 5-3 7-5 2 2 4 4 7 5-3-2-4-4-4-7V21c-1 1-2 2-3 3-1-1-2-2-3-3z"/>
-    </svg>
-  </div>
-  <div class="donate-text">Зробити донат</div>
-</a>
 </body>
 </html>

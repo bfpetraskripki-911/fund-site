@@ -367,8 +367,64 @@ z-index: 9999;
 display: block;
 box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 ">
-  <img src="logo.jpg" style="width:100%; height:100%; object-fit:cover;">
+<a href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank" class="donate-float" id="donateFloat">
+  <img src="logo.jpg" alt="Зробити донат">
+  <span class="donate-float-label">Зробити донат</span>
 </a>
+
+<script>
+  (function () {
+    const btn = document.getElementById('donateFloat');
+    let isDown = false;
+    let moved = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    btn.addEventListener('mousedown', function (e) {
+      isDown = true;
+      moved = false;
+      btn.style.cursor = 'grabbing';
+      const rect = btn.getBoundingClientRect();
+      offsetX = e.clientX - rect.left;
+      offsetY = e.clientY - rect.top;
+      btn.style.left = rect.left + 'px';
+      btn.style.top = rect.top + 'px';
+      btn.style.right = 'auto';
+      btn.style.bottom = 'auto';
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      moved = true;
+      let x = e.clientX - offsetX;
+      let y = e.clientY - offsetY;
+
+      const maxX = window.innerWidth - btn.offsetWidth;
+      const maxY = window.innerHeight - btn.offsetHeight;
+
+      if (x < 0) x = 0;
+      if (y < 0) y = 0;
+      if (x > maxX) x = maxX;
+      if (y > maxY) y = maxY;
+
+      btn.style.left = x + 'px';
+      btn.style.top = y + 'px';
+    });
+
+    document.addEventListener('mouseup', function () {
+      isDown = false;
+      btn.style.cursor = 'grab';
+    });
+
+    btn.addEventListener('click', function (e) {
+      if (moved) {
+        e.preventDefault();
+        moved = false;
+      }
+    });
+  })();
+</script>
 </body>
 </html>
 </body>

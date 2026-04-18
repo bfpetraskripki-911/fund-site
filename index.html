@@ -1,426 +1,116 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Благодійний фонд Петра Скрипки</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Благодійний фонд Петра Скрипки</title>
 
-    .top-banner {
-      width: 100%;
-      height: auto;
-      max-height: 300px;
-      object-fit: containe;
-      object-position: bottom;
-      display: block;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
 
-    .intro {
-      max-width: 100%;
-      margin: 30px auto;
-      background: white;
-      padding: 30px 0px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
+.top-banner {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+}
 
-    .intro img {
-      display: block;
-      margin: 20px auto;
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-    }
+.intro, section {
+  margin: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
 
-    nav {
-      background: #16324a;
-      text-align: center;
-      padding: 12px;
-    }
+.gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-      display: inline-block;
-    }
+.gallery img {
+  width: 45%;
+  border-radius: 10px;
+}
 
-    section {
-      max-width: 100%;
-      margin: 30px auto;
-      background: white;
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
+/* КНОПКА */
+.donate-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
 
-    h2 {
-      color: #1d3557;
-      margin-top: 0;
-    }
+.donate-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
 
-    .button {
-      display: inline-block;
-      background: #d62828;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 300px;
-      max-width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .socials a {
-      display: inline-block;
-      margin: 8px 12px 8px 0;
-      color: #1d3557;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .report-item {
-      background: #f0f4f8;
-      padding: 15px;
-      border-radius: 8px;
-      margin-bottom: 12px;
-    }
-
-    .floating-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #d62828;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #1d3557;
-      color: white;
-      margin-top: 30px;
-    }
-  </style>
+.donate-text {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+}
+</style>
 </head>
+
 <body>
-  <nav>
-    <a href="#about">Про фонд</a>
-    <a href="#help">Як допомогти</a>
-    <a href="#media">Фото / Відео / Звіти</a>
-    <a href="#contacts">Контакти</a>
-  </nav>
 
-  <div class="top-banner-wrap">
-    <img src="logo.jpg" class="top-banner" alt="Банер фонду">
-  </div>
+<img src="logo.jpg" class="top-banner">
 
-  <div class="intro">
-    <p>
-      Я — Петро Скрипка, ветеран, колишній військовий та засновник благодійного фонду Петра Скрипки.
-    </p>
+<div class="intro">
+<p>Я — Петро Скрипка...</p>
 
-    <div style="text-align:center; margin:20px 0;">
-      <img src="images/photo1.jpg" style="max-width:500px; width:100%;">
-    </div>
-
-    <p>
-      Після того як я був комісований зі служби за станом здоров’я, я не зупинився.
-      Я організував піший благодійний марафон і пройшов від Києва до Нюрнберга (Німеччина),
-      подолавши понад 2000 кілометрів через Україну, Польщу та Чехію.
-    </p>
-
-    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
-      <img src="images/foto6.jpg" style="width:100%; max-width:320px; border-radius:10px;">
-      <img src="images/foto3.jpg" style="width:100%; max-width:320px; border-radius:10px;">
-    </div>
-
-    <p>
-      Метою цього марафону був збір коштів на протезування поранених військових.
-      Разом із небайдужими людьми нам вдалося зібрати 1,6 мільйона гривень,
-      які були передані організації «Янголи Азову» для допомоги нашим захисникам.
-    </p>
-
-    <img src="images/foto4.jpg" style="display:block; margin:20px auto; max-width:500px; width:100%; border-radius:10px;">
-
-    <p style="text-align:center;">
-      <a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank" style="color:#1d3557; font-weight:bold;">
-        Дивитися сюжет про цей марафон
-      </a>
-    </p>
-
-    <p>
-      Повернувшись додому, вже взимку я організував другий марафон — від Києва до Івано-Франківська,
-      у ході якого було зібрано 950 тисяч гривень на автомобіль для моїх побратимів з 3-ї штурмової бригади.
-    </p>
-
-    <p>
-      Після цього почалися регулярні збори на РЕБи, автомобілі, дрони, медичне обладнання
-      та іншу необхідну допомогу для різних підрозділів.
-    </p>
-
-    <p>
-      Так разом із командою ми заснували благодійний фонд і продовжуємо допомагати військовим
-      та цивільним, які цього потребують.
-    </p>
-
-    <h2>Сюжети та новини про мене</h2>
-
-    <div class="report-item">
-      <a href="https://suspilne.media/rivne/536283-jde-z-kieva-do-lvova-ak-u-rivnomu-zustrili-colovika-akij-zbirae-na-protezi-vijskovim-i-ditam/" target="_blank">
-        Суспільне Рівне — марафон Київ–Львів
-      </a>
-    </div>
-
-    <div class="report-item">
-      <a href="https://suspilne.media/lviv/541497-veteran-azovu-projsov-piski-z-kieva-do-lvova-sob-zibrati-grosi-na-protezi-poranenim/" target="_blank">
-        Суспільне Львів — ветеран пройшов пішки з Києва до Львова
-      </a>
-    </div>
-
-    <div class="report-item">
-      <a href="https://www.ukrinform.ua/rubric-society/3744091-piski-z-kieva-do-lvova-za-21-den-azovec-zibrav-na-likuvanna-pobratimiv-720-tisac.html" target="_blank">
-        Укрінформ — зібрано кошти на лікування побратимів
-      </a>
-    </div>
-
-    <div class="report-item">
-      <a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank">
-        YouTube — сюжет про марафон
-      </a>
-    </div>
-  </div>
-
-  <section id="about">
-    <h2>Про фонд</h2>
-    <p>
-      З перших днів війни я став на захист України. Сьогодні разом зі своєю командою
-      ми продовжуємо допомагати тим, хто цього найбільше потребує.
-    </p>
-    <p>
-      Ми робимо це, тому що не можемо інакше. Коли ти бачиш біль людей —
-      ти або проходиш повз, або допомагаєш.
-    </p>
-    <h2>Сюжети, інтерв’ю та новини про мене</h2>
-
-<div class="report-item">
-  <a href="https://suspilne.media/rivne/536283-jde-z-kieva-do-lvova-ak-u-rivnomu-zustrili-colovika-akij-zbirae-na-protezi-vijskovim-i-ditam/" target="_blank">
-    Суспільне Рівне — марафон Київ–Львів
-  </a>
+<div class="gallery">
+<img src="images/foto6.jpg">
+<img src="images/foto3.jpg">
 </div>
 
-<div class="report-item">
-  <a href="https://suspilne.media/lviv/541497-veteran-azovu-projsov-piski-z-kieva-do-lvova-sob-zibrati-grosi-na-protezi-poranenim/" target="_blank">
-    Суспільне Львів — ветеран пройшов пішки з Києва до Львова
-  </a>
+<p>Метою цього марафону...</p>
+
+<img src="images/foto4.jpg">
+
+<p>
+<a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank">
+Дивитися сюжет
+</a>
+</p>
+
 </div>
 
-<div class="report-item">
-  <a href="https://www.ukrinform.ua/rubric-society/3744091-piski-z-kieva-do-lvova-za-21-den-azovec-zibrav-na-likuvanna-pobratimiv-720-tisac.html" target="_blank">
-    Укрінформ — похід Київ–Львів за 21 день
-  </a>
-</div>
+<section>
+<h2>Про фонд</h2>
+<p>З перших днів війни...</p>
+<p>Ми допомагаємо...</p>
+</section>
 
-<div class="report-item">
-  <a href="https://www.youtube.com/watch?v=xXApMolyoVo" target="_blank">
-    YouTube — «Азовець» пройшов 600 км пішки
-  </a>
-</div>
-
-<div class="report-item">
-  <a href="https://www.youtube.com/watch?v=EM-6LTlgTDQ" target="_blank">
-    YouTube — піший похід для збору коштів для ЗСУ
-  </a>
-</div>
-
-<div class="report-item">
-  <a href="https://www.youtube.com/watch?v=eiyvJNG0Gxk" target="_blank">
-    YouTube — марафон Київ–Лісабон, Прага
-  </a>
-</div>
-
-<div class="report-item">
-  <a href="https://www.youtube.com/watch?v=KD_nRsV3GrU" target="_blank">
-    YouTube — Петро Скрипка, піший марафон Київ–Лісабон
-  </a>
-</div>
-
-<div class="report-item">
-  <a href="https://www.youtube.com/watch?v=cwlptGNJJxc" target="_blank">
-    YouTube — сюжет про марафон і збір допомоги
-  </a>
-</div>
-
-<div class="report-item">
-  <a href="https://www.youtube.com/watch?v=c1ZIGIKSSzg" target="_blank">
-    YouTube — «Я не забуду»: Київ–Лісабон
-  </a>
-</div>
-  </section>
-
-  <section id="help">
-    <h2>Як допомогти</h2>
-    <p>Ви можете підтримати нашу діяльність:</p>
-    <ul>
-      <li>фінансовою допомогою</li>
-      <li>передачею необхідних речей</li>
-      <li>інформаційною підтримкою</li>
-    </ul>
-    <a class="button" href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank">Підтримати фонд</a>
-  </section>
-
-  <section id="media">
-    <h2>Фото / Відео / Звіти</h2>
-  </section>
-
-  <section id="reports">
-    <h2>Звіти та діяльність</h2>
-    <div class="report-item">Тут можна додавати звіти.</div>
-  </section>
-
-  <section id="photos">
-    <h2>Фото</h2>
-    <div class="gallery">
-      <img src="images/photo1.jpg" alt="Фото 1">
-    </div>
-  </section>
-
-  <section id="videos">
-    <h2>Відео</h2>
-    <p><a href="https://youtu.be/c1ZIGIKSSzg?si=Ct5e-mtE_7nLr3AR" target="_blank">Подивитися відео</a></p>
-  </section>
-
-  <div class="socials">
-    <a href="https://www.facebook.com/share/18Ny33b7tr/" target="_blank">Facebook</a>
-    <a href="https://www.tiktok.com/@marafondobra_p_s?_r=1&_t=ZS-95av7W2dXtA" target="_blank">TikTok</a>
-    <a href="https://www.instagram.com/petro__skrypka?igsh=dm8ycWI4MHQ0bDJ6" target="_blank">Instagram</a>
-    <a href="https://www.threads.com/@petro__skrypka" target="_blank">Threads</a>
-    <a href="https://t.me/PetroSkrypka911" target="_blank">Telegram</a>
-  </div>
-
-  <footer>
-    Благодійний фонд Петра Скрипки © 2026
-  </footer>
-
-  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank" class="floating-button">
-    Допомогти
-  </a>
-  <footer>
-  Благодійний фонд Петра Скрипки © 2026
+<footer style="text-align:center;padding:20px;background:#1d3557;color:white;">
+Благодійний фонд Петра Скрипки © 2026
 </footer>
 
-<a href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank" style="
-position: fixed;
-bottom: 20px;
-right: 20px;
-width: 80px;
-height: 80px;
-border-radius: 50%;
-background: white;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 6px 18px rgba(0,0,0,0.35);
-z-index: 9999;
-overflow: hidden;
-transition: all 0.25s ease;
-"
-onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.5)';"
-onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.35)';"
->
-  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank" style="
-position: fixed;
-bottom: 20px;
-right: 20px;
-width: 90px;
-height: 90px;
-border-radius: 50%;
-overflow: hidden;
-z-index: 9999;
-display: block;
-box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-">
-<script>
-  (function () {
-    const btn = document.getElementById('donateFloat');
-    let isDown = false;
-    let moved = false;
-    let offsetX = 0;
-    let offsetY = 0;
+<!-- КРУГЛА КНОПКА -->
+<a href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank" class="donate-btn">
+<img src="logo.jpg">
+<div class="donate-text">Зробити донат</div>
+</a>
 
-    btn.addEventListener('mousedown', function (e) {
-      isDown = true;
-      moved = false;
-      btn.style.cursor = 'grabbing';
-      const rect = btn.getBoundingClientRect();
-      offsetX = e.clientX - rect.left;
-      offsetY = e.clientY - rect.top;
-      btn.style.left = rect.left + 'px';
-      btn.style.top = rect.top + 'px';
-      btn.style.right = 'auto';
-      btn.style.bottom = 'auto';
-      e.preventDefault();
-    });
-
-    document.addEventListener('mousemove', function (e) {
-      if (!isDown) return;
-      moved = true;
-      let x = e.clientX - offsetX;
-      let y = e.clientY - offsetY;
-
-      const maxX = window.innerWidth - btn.offsetWidth;
-      const maxY = window.innerHeight - btn.offsetHeight;
-
-      if (x < 0) x = 0;
-      if (y < 0) y = 0;
-      if (x > maxX) x = maxX;
-      if (y > maxY) y = maxY;
-
-      btn.style.left = x + 'px';
-      btn.style.top = y + 'px';
-    });
-
-    document.addEventListener('mouseup', function () {
-      isDown = false;
-      btn.style.cursor = 'grab';
-    });
-
-    btn.addEventListener('click', function (e) {
-      if (moved) {
-        e.preventDefault();
-        moved = false;
-      }
-    });
-  })();
-</script>
-</body>
-</html>
 </body>
 </html>

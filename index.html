@@ -106,7 +106,43 @@
       border-radius: 8px;
       margin-bottom: 12px;
     }
+.donate-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 9999;
+  display: block;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  cursor: grab;
+  user-select: none;
+}
 
+.donate-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+}
+
+.donate-float-text {
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.72);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  pointer-events: none;
+}
     footer {
       text-align: center;
       padding: 25px;

@@ -174,14 +174,13 @@
   cursor: grab;
 }
 
-.donate-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+.donate-circle img {
+  width: 100%;
+  height: 160%;          /* збільшуємо висоту */
+  object-fit: cover;
+  object-position: center 40%;  /* зсув вгору */
+  display: block;
 }
-
 .donate-circle img {
   width: 100%;
   height: 100%;

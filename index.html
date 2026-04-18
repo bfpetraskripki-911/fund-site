@@ -17,7 +17,7 @@
       width: 100%;
       height: auto;
       max-height: 300px;
-      object-fit: containe;
+      object-fit: contain;
       object-position: bottom;
       display: block;
     }
@@ -26,7 +26,7 @@
       max-width: 100%;
       margin: 30px auto;
       background: white;
-      padding: 30px 0px;
+      padding: 30px 0;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
@@ -92,6 +92,15 @@
       object-fit: cover;
     }
 
+    .socials {
+      max-width: 100%;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
     .socials a {
       display: inline-block;
       margin: 8px 12px 8px 0;
@@ -107,61 +116,84 @@
       margin-bottom: 12px;
     }
 
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #1d3557;
+      color: white;
+      margin-top: 30px;
+    }
 
-.donate-circle img {
-  width: 100%;
-  height: 160%;          /* збільшуємо висоту */
-  object-fit: cover;
-  object-position: center 40%;  /* зсув вгору */
-  display: block;
-}
-.donate-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    /* ПЛАВАЮЧА КНОПКА ДОНАТУ */
+    .donate-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 99999;
+    }
 
-.donate-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
+    .donate-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.28);
+      border: 3px solid #ffffff;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
 
-.donate-icon img {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-}
+    .donate-icon svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
 
-.donate-text {
-    background: #e60023;
-    color: white;
-    padding: 15px 25px 15px 40px;
-    margin-left: -20px;
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: bold;
-    white-space: nowrap;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
     .donate-text {
-    background: #e60023;
-    color: white;
-    padding: 15px 25px 15px 40px;
-    margin-left: -20px;
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: bold;
-    white-space: nowrap;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-</style>
+      background: #d62828;
+      color: #fff;
+      padding: 14px 22px 14px 36px;
+      margin-left: -18px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    }
+
+    .donate-btn:hover .donate-text {
+      transform: translateX(-4px);
+    }
+
+    .donate-text,
+    .donate-btn {
+      transition: all 0.25s ease;
+    }
+
+    @media (max-width: 600px) {
+      .donate-btn {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .donate-icon {
+        width: 56px;
+        height: 56px;
+      }
+
+      .donate-text {
+        font-size: 14px;
+        padding: 12px 18px 12px 30px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -182,7 +214,7 @@
     </p>
 
     <div style="text-align:center; margin:20px 0;">
-      <img src="images/photo1.jpg" style="max-width:500px; width:100%;">
+      <img src="images/photo1.jpg" alt="Фото Петра Скрипки" style="max-width:500px; width:100%;">
     </div>
 
     <p>
@@ -192,8 +224,8 @@
     </p>
 
     <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
-      <img src="images/foto6.jpg" style="width:100%; max-width:320px; border-radius:10px;">
-      <img src="images/foto3.jpg" style="width:100%; max-width:320px; border-radius:10px;">
+      <img src="images/foto6.jpg" alt="Фото марафону 1" style="width:100%; max-width:320px; border-radius:10px;">
+      <img src="images/foto3.jpg" alt="Фото марафону 2" style="width:100%; max-width:320px; border-radius:10px;">
     </div>
 
     <p>
@@ -202,7 +234,7 @@
       які були передані організації «Янголи Азову» для допомоги нашим захисникам.
     </p>
 
-    <img src="images/foto4.jpg" style="display:block; margin:20px auto; max-width:500px; width:100%; border-radius:10px;">
+    <img src="images/foto4.jpg" alt="Фото фонду" style="display:block; margin:20px auto; max-width:500px; width:100%; border-radius:10px;">
 
     <p style="text-align:center;">
       <a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank" style="color:#1d3557; font-weight:bold;">
@@ -352,7 +384,7 @@
     <p><a href="https://youtu.be/c1ZIGIKSSzg?si=Ct5e-mtE_7nLr3AR" target="_blank">Подивитися відео</a></p>
   </section>
 
-  <div class="socials">
+  <div class="socials" id="contacts">
     <a href="https://www.facebook.com/share/18Ny33b7tr/" target="_blank">Facebook</a>
     <a href="https://www.tiktok.com/@marafondobra_p_s?_r=1&_t=ZS-95av7W2dXtA" target="_blank">TikTok</a>
     <a href="https://www.instagram.com/petro__skrypka?igsh=dm8ycWI4MHQ0bDJ6" target="_blank">Instagram</a>
@@ -364,90 +396,13 @@
     Благодійний фонд Петра Скрипки © 2026
   </footer>
 
-<script>
-(function () {
-  const btn = document.getElementById('donateFloat');
-  let dragging = false;
-  let moved = false;
-  let startX = 0;
-  let startY = 0;
-  let initialLeft = 0;
-  let initialTop = 0;
-
-  btn.addEventListener('mousedown', function (e) {
-    dragging = true;
-    moved = false;
-
-    const rect = btn.getBoundingClientRect();
-    initialLeft = rect.left;
-    initialTop = rect.top;
-
-    startX = e.clientX;
-    startY = e.clientY;
-
-    btn.style.left = rect.left + 'px';
-    btn.style.top = rect.top + 'px';
-    btn.style.right = 'auto';
-    btn.style.bottom = 'auto';
-
-    e.preventDefault();
-  });
-
-  document.addEventListener('mousemove', function (e) {
-    if (!dragging) return;
-
-    let dx = e.clientX - startX;
-    let dy = e.clientY - startY;
-
-    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
-      moved = true;
-    }
-
-    let newLeft = initialLeft + dx;
-    let newTop = initialTop + dy;
-
-    const maxLeft = window.innerWidth - btn.offsetWidth;
-    const maxTop = window.innerHeight - btn.offsetHeight;
-
-    if (newLeft < 0) newLeft = 0;
-    if (newTop < 0) newTop = 0;
-    if (newLeft > maxLeft) newLeft = maxLeft;
-    if (newTop > maxTop) newTop = maxTop;
-
-    btn.style.left = newLeft + 'px';
-    btn.style.top = newTop + 'px';
-  });
-
-  document.addEventListener('mouseup', function () {
-    dragging = false;
-  });
-
-  btn.addEventListener('click', function (e) {
-    if (moved) {
-      e.preventDefault();
-      moved = false;
-    }
-  });
-})();
-</script>
-  <a href="https://send.monobank.ua/jar/ВАШ_ЛІНК" class="donate-btn">
-
+  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" class="donate-btn" target="_blank" aria-label="Зробити донат">
     <div class="donate-icon">
-        <img src="trident.png" alt="donate">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <path fill="#ffd700" d="M32 7c3 4 7 7 12 9v6c-2 1-4 2-5 4v9c0 4 2 7 6 9v5c-5-1-9-4-13-7-4 3-8 6-13 7v-5c4-2 6-5 6-9v-9c-1-2-3-3-5-4v-6c5-2 9-5 12-9zm-3 14v13c0 3-1 5-4 7 3-1 5-3 7-5 2 2 4 4 7 5-3-2-4-4-4-7V21c-1 1-2 2-3 3-1-1-2-2-3-3z"/>
+      </svg>
     </div>
-
-    <div class="donate-text">
-        Зробити донат
-    </div>
-
-</a>
-  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" class="donate-btn">
-    <div class="donate-icon">
-        <img src="trident.png" alt="donate">
-    </div>
-    <div class="donate-text">
-        Зробити донат
-    </div>
-</a>
+    <div class="donate-text">Зробити донат</div>
+  </a>
 </body>
 </html>

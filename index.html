@@ -13,14 +13,15 @@
       line-height: 1.6;
     }
 
-   .top-banner {
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit:containe;
-  object-position: bottom;
-  display: block;
-}
+    .top-banner {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: containe;
+      object-position: bottom;
+      display: block;
+    }
+
     .intro {
       max-width: 100%;
       margin: 30px auto;
@@ -28,8 +29,6 @@
       padding: 30px 0px;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
     }
 
     .intro img {
@@ -108,6 +107,20 @@
       margin-bottom: 12px;
     }
 
+    .floating-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #d62828;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
     footer {
       text-align: center;
       padding: 25px;
@@ -117,13 +130,13 @@
     }
   </style>
 </head>
-<body> <nav>
+<body>
+  <nav>
     <a href="#about">Про фонд</a>
     <a href="#help">Як допомогти</a>
     <a href="#media">Фото / Відео / Звіти</a>
     <a href="#contacts">Контакти</a>
   </nav>
-
 
   <div class="top-banner-wrap">
     <img src="logo.jpg" class="top-banner" alt="Банер фонду">
@@ -135,30 +148,34 @@
     </p>
 
     <div style="text-align:center; margin:20px 0;">
-  <img src="images/photo1.jpg" style="max-width:500px; width:100%;">
-</div>
+      <img src="images/photo1.jpg" style="max-width:500px; width:100%;">
+    </div>
 
     <p>
       Після того як я був комісований зі служби за станом здоров’я, я не зупинився.
       Я організував піший благодійний марафон і пройшов від Києва до Нюрнберга (Німеччина),
       подолавши понад 2000 кілометрів через Україну, Польщу та Чехію.
     </p>
-<div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
-  <img src="images/foto6.jpg" style="width:100%; max-width:320px; border-radius:10px;">
-  <img src="images/foto3.jpg" style="width:100%; max-width:320px; border-radius:10px;">
-</div>
+
+    <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
+      <img src="images/foto6.jpg" style="width:100%; max-width:320px; border-radius:10px;">
+      <img src="images/foto3.jpg" style="width:100%; max-width:320px; border-radius:10px;">
+    </div>
+
     <p>
       Метою цього марафону був збір коштів на протезування поранених військових.
       Разом із небайдужими людьми нам вдалося зібрати 1,6 мільйона гривень,
       які були передані організації «Янголи Азову» для допомоги нашим захисникам.
     </p>
-<img src="images/foto4.jpg" style="display:block; margin:20px auto; max-width:500px; width:100%; border-radius:10px;">
 
-<p style="text-align:center;">
-  <a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank" style="color:#1d3557; font-weight:bold;">
-    Дивитися сюжет про цей марафон
-  </a>
-</p>
+    <img src="images/foto4.jpg" style="display:block; margin:20px auto; max-width:500px; width:100%; border-radius:10px;">
+
+    <p style="text-align:center;">
+      <a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank" style="color:#1d3557; font-weight:bold;">
+        Дивитися сюжет про цей марафон
+      </a>
+    </p>
+
     <p>
       Повернувшись додому, вже взимку я організував другий марафон — від Києва до Івано-Франківська,
       у ході якого було зібрано 950 тисяч гривень на автомобіль для моїх побратимів з 3-ї штурмової бригади.
@@ -174,10 +191,33 @@
       та цивільним, які цього потребують.
     </p>
 
-    <a class="button" href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank">Допомогти зараз</a>
+    <h2>Сюжети та новини про мене</h2>
+
+    <div class="report-item">
+      <a href="https://suspilne.media/rivne/536283-jde-z-kieva-do-lvova-ak-u-rivnomu-zustrili-colovika-akij-zbirae-na-protezi-vijskovim-i-ditam/" target="_blank">
+        Суспільне Рівне — марафон Київ–Львів
+      </a>
+    </div>
+
+    <div class="report-item">
+      <a href="https://suspilne.media/lviv/541497-veteran-azovu-projsov-piski-z-kieva-do-lvova-sob-zibrati-grosi-na-protezi-poranenim/" target="_blank">
+        Суспільне Львів — ветеран пройшов пішки з Києва до Львова
+      </a>
+    </div>
+
+    <div class="report-item">
+      <a href="https://www.ukrinform.ua/rubric-society/3744091-piski-z-kieva-do-lvova-za-21-den-azovec-zibrav-na-likuvanna-pobratimiv-720-tisac.html" target="_blank">
+        Укрінформ — зібрано кошти на лікування побратимів
+      </a>
+    </div>
+
+    <div class="report-item">
+      <a href="https://youtu.be/cwlptGNJJxc?si=oVTe1U4DoenVbUex" target="_blank">
+        YouTube — сюжет про марафон
+      </a>
+    </div>
   </div>
 
- 
   <section id="about">
     <h2>Про фонд</h2>
     <p>
@@ -200,9 +240,11 @@
     </ul>
     <a class="button" href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank">Підтримати фонд</a>
   </section>
-<section id="media">
-  <h2>Фото / Відео / Звіти</h2>
-</section>
+
+  <section id="media">
+    <h2>Фото / Відео / Звіти</h2>
+  </section>
+
   <section id="reports">
     <h2>Звіти та діяльність</h2>
     <div class="report-item">Тут можна додавати звіти.</div>
@@ -221,17 +263,19 @@
   </section>
 
   <div class="socials">
-  <a href="https://www.facebook.com/share/18Ny33b7tr/" target="_blank">Facebook</a>
-  <a href="https://www.tiktok.com/@marafondobra_p_s?_r=1&_t=ZS-95av7W2dXtA" target="_blank">TikTok</a>
-  <a href="https://www.instagram.com/petro__skrypka?igsh=dm8ycWI4MHQ0bDJ6" target="_blank">Instagram</a>
-  <a href="https://www.threads.com/@petro__skrypka" target="_blank">Threads</a>
-  <a href="https://t.me/PetroSkrypka911" target="_blank">Telegram</a>
-</div>
-  </section>
+    <a href="https://www.facebook.com/share/18Ny33b7tr/" target="_blank">Facebook</a>
+    <a href="https://www.tiktok.com/@marafondobra_p_s?_r=1&_t=ZS-95av7W2dXtA" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/petro__skrypka?igsh=dm8ycWI4MHQ0bDJ6" target="_blank">Instagram</a>
+    <a href="https://www.threads.com/@petro__skrypka" target="_blank">Threads</a>
+    <a href="https://t.me/PetroSkrypka911" target="_blank">Telegram</a>
+  </div>
 
   <footer>
     Благодійний фонд Петра Скрипки © 2026
   </footer>
 
+  <a href="https://send.monobank.ua/jar/6qpTzTDwDe" target="_blank" class="floating-button">
+    Допомогти
+  </a>
 </body>
 </html>
